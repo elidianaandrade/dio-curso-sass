@@ -1,0 +1,6 @@
+button {
+  border: 1px solid gray;
+  &:hover {
+    border-color: black;
+  }
+}
