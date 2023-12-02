@@ -1,0 +1,35 @@
+$background-color: plum;
+$border-color: rgb(255, 0, 85);
+$font-size: 18px;
+
+$selector: "section";
+
+:root {
+  --background-color: #{$background-color};
+}
+
+#{$selector} {
+  display: flex;
+  gap: 1rem;
+}
+
+ol {
+  background-color: var(--background-color);
+  border: 2px solid $border-color;
+}
+
+button {
+  padding: .5rem 2rem;
+  background-color: $background-color;
+  border: 2px solid $border-color;
+  font-size: $font-size;
+}
+
+.box {
+  $background-color: red;
+  width: 114px;
+  aspect-ratio: 1/1;
+  background-color: $background-color;
+  border: 2px solid $border-color;
+  font-size: $font-size;
+}

@@ -1,0 +1,30 @@
+:root {
+  --background-color: plum;
+}
+
+section {
+  display: flex;
+  gap: 1rem;
+}
+
+ol {
+  background-color: var(--background-color);
+  border: 2px solid rgb(255, 0, 85);
+}
+
+button {
+  padding: 0.5rem 2rem;
+  background-color: plum;
+  border: 2px solid rgb(255, 0, 85);
+  font-size: 18px;
+}
+
+.box {
+  width: 114px;
+  aspect-ratio: 1/1;
+  background-color: red;
+  border: 2px solid rgb(255, 0, 85);
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=styles.css.map */
