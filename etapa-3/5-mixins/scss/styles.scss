@@ -1,0 +1,82 @@
+// Mixin
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset_list;
+}
+
+// Mixin com Argumentos Obrigatórios
+@mixin flex-container($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.argumento-obrigatorio {
+  @include flex-container(row, center, center);
+}
+
+// Mixin com Argumentos Opcionais
+@mixin flex-container2($direction: column, $justify: center, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.argumento-opcional {
+  @include flex-container2();
+}
+
+// Mixin com Argumentos de Palavra-chave
+@mixin flex-container3($direction: column, $justify: center, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.argumento-palavra-chave {
+  @include flex-container3(row, $align: center, $justify: flex-start);
+}
+
+// Bloco de Conteúdo
+@mixin message-shared($color) {
+  border: 1px solid #CCC;
+  color: $color;
+
+  &:hover {
+    @content;
+  }
+}
+
+.success {
+  @include message-shared(#00FF00) {
+    border-color: green;
+  }
+}
+
+.warning {
+  @include message-shared(#FFFF00) {
+    border-color: yellow;
+    color: black;
+  }
+}
+
+// Mixin com Argumentos Arbitrários
+@mixin button-style($color, $properties...) {
+  border-radius: 50rem;
+
+  @each $property in $properties {
+    #{$property}: $color;
+  }
+}
+
+button {
+  @include button-style(purple, color, border-color, background-color);
+}
