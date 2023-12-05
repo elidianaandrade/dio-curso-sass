@@ -1,0 +1,28 @@
+.button {
+  border: .125rem solid #CCC;
+  border-radius: 50rem;
+  padding: .5rem 1rem;
+  color: red;
+}
+
+%button-style {
+  background-color: black;
+}
+
+div {
+  .button {
+    i {
+      color: gray;
+    }
+  }
+}
+
+.button-success {
+  border-color: green;
+  @extend %button-style;
+}
+
+.button-warning {
+  border-color: yellow;
+  @extend .button;
+}
