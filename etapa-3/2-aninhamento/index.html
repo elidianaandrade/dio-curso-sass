@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aninhando Seletores (Nesting)</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+  <main>
+    <h1>Aninhando Seletores (Nesting)</h1>
+    <ol>
+      <li>Aninhamento Básico</li>
+      <li>Lista de Seletores</li>
+      <li>Combinadores CSS</li>
+      <li>Referencing (&)</li>
+      <li>Aninhamento Avançado</li>
+    </ol>
+  </main>
+  <hr>
+  <section>
+    <h2>Aninhamento Básico</h2>
+    <h3>Exemplo I - nav ul</h3>
+    <nav>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </nav>
+    <h3>Exemplo II - ul</h3>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <h3>Exemplo III - @media</h3>
+    <div class="box"></div>
+  </section>
+  <hr>
+  <section>
+    <h2>Lista de Seletores</h2>
+    <button class="success">
+      <span>success</span>
+      <i>✓</i>
+    </button>
+    <button class="warning">
+      <span>warning</span>
+      <i>⚠</i>
+    </button>
+  </section>
+  <hr>
+  <section>
+    <h2>Combinadores CSS</h2>
+    <h3>Exemplo I - Seletor Filho</h3>
+    <ul class="parent">
+      <li class="child">Filho 1
+        <ul>
+          <li>Neto 1</li>
+          <li>Neto 2</li>
+        </ul>
+      </li>
+      <li class="child">Filho 2</li>
+      <li class="child">Filho 3</li>
+    </ul>
+    <h3>Exemplo II - Seletor Irmão</h3>
+    <div class="parent2">
+      <h4>Filho 1</h4>
+      <p>Filho 2</p>
+      <p>Filho 3</p>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <h2>Referencing (&)</h2>
+    <ol>
+      <li>Elemento com o seletor secundário que esteja dentro do elemento com o seletor primário em qualquer nível.</li>
+      <li>Elemento que possua os dois seletores indicados.</li>
+      <li>Concatenação do seletor pai.</li>
+    </ol>
+    <h3>Exemplo</h3>
+    <ul class="nesting">
+      <li class="item">Item 1
+        <ul class="nesting-sublist">
+          <li class="subitem">Subitem 1</li>
+          <li class="subitem">Subitem 2</li>
+          <li class="subitem">Subitem 3</li>
+        </ul>
+      </li>
+      <li class="item">Item 2
+        <ul class="nesting nesting-sublist">
+          <li class="subitem">Subitem 1</li>
+          <li class="subitem">Subitem 2</li>
+          <li class="subitem">Subitem 3</li>
+        </ul>
+      </li>
+      <li class="item">Item 3</li>
+    </ul>
+    <ul class="nesting-sublist">
+      <li class="subitem">Subitem 1</li>
+      <li class="subitem">Subitem 2</li>
+      <li class="subitem">Subitem 3</li>
+    </ul>
+  </section>
+  <hr>
+  <section>
+    <h2>Aninhamento Avançado</h2>
+    <a href="https://www.dio.me/" target="_blank">
+      <h3 class="title">Digital Innovation One</h3>
+    </a>
+  </section>
+  <hr>
+</body>
+</html>

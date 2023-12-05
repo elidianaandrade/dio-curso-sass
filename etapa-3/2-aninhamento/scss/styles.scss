@@ -1,0 +1,128 @@
+$tablet: 768px;
+$desktop: 992px;
+
+
+.box {
+  width: 250px;
+  border: 2px solid black;
+  background-color: plum;
+  aspect-ratio: 16/9;
+
+  @media (min-width: $tablet) {
+    background-color: palegreen;
+  }
+
+  @media (min-width: $desktop) {
+    background-color: purple;
+  }
+}
+
+button {
+  padding: .5rem 1.5rem;
+  border: 2px solid black;
+}
+
+.success, .warning {
+  span, i {
+    font-size: 20px;
+    color: blue;
+  }
+}
+
+.parent {
+  background-color: palevioletred;
+  padding: 1rem;
+
+  .child {
+    background-color: aquamarine;
+    
+    li {
+      background-color: pink;
+    }
+  }
+}
+
+.parent > {
+  li {
+    border: 2px dashed blue;
+  }
+}
+
+.parent {
+  > li {
+    border: 2px dashed red;
+  }
+}
+
+.parent {
+  > {
+    li {
+      border: 2px dashed green;
+    }
+  }
+}
+
+h4 {
+  + p {
+    background-color: plum;
+  }
+}
+
+p {
+  + p {
+    background-color: pink;
+  }
+}
+
+/*.nesting {
+  background-color: purple;
+
+  .item {
+    color: white;
+
+    .nesting-sublist {
+      background-color: pink;
+
+      .subitem {
+        color: purple;
+      }
+    }
+  }
+}*/
+
+.nesting {
+  background-color: purple;
+
+  .item {
+    color: white;
+  }
+
+  &-sublist {
+    background-color: plum;
+  
+    .subitem {
+      color: purple;
+    }
+  }
+
+}
+
+.title {
+  font-size: 1.25rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #E94D5F;
+
+  @at-root a #{&} {
+    color: blue;
+  }
+}
+
+nav {
+  ul {
+    background-color: plum;
+  }
+
+  li {
+    color: purple;
+  }
+}

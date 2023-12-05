@@ -1,0 +1,103 @@
+.box {
+  width: 250px;
+  border: 2px solid black;
+  background-color: plum;
+  aspect-ratio: 16/9;
+}
+@media (min-width: 768px) {
+  .box {
+    background-color: palegreen;
+  }
+}
+@media (min-width: 992px) {
+  .box {
+    background-color: purple;
+  }
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid black;
+}
+
+.success span, .success i, .warning span, .warning i {
+  font-size: 20px;
+  color: blue;
+}
+
+.parent {
+  background-color: palevioletred;
+  padding: 1rem;
+}
+.parent .child {
+  background-color: aquamarine;
+}
+.parent .child li {
+  background-color: pink;
+}
+
+.parent > li {
+  border: 2px dashed blue;
+}
+
+.parent > li {
+  border: 2px dashed red;
+}
+
+.parent > li {
+  border: 2px dashed green;
+}
+
+h4 + p {
+  background-color: plum;
+}
+
+p + p {
+  background-color: pink;
+}
+
+/*.nesting {
+  background-color: purple;
+
+  .item {
+    color: white;
+
+    .nesting-sublist {
+      background-color: pink;
+
+      .subitem {
+        color: purple;
+      }
+    }
+  }
+}*/
+.nesting {
+  background-color: purple;
+}
+.nesting .item {
+  color: white;
+}
+.nesting-sublist {
+  background-color: plum;
+}
+.nesting-sublist .subitem {
+  color: purple;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #E94D5F;
+}
+a .title {
+  color: blue;
+}
+
+nav ul {
+  background-color: plum;
+}
+nav li {
+  color: purple;
+}
+
+/*# sourceMappingURL=styles.css.map */
