@@ -1,0 +1,55 @@
+// Expressões Literais
+
+p {
+  font-size: 1rem;
+  z-index: 2;
+}
+
+span {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+button {
+  background-color: #FAFAFA;
+  color: purple;
+}
+
+$colors: red, green, blue;
+
+h1 {
+  color: nth($colors, 2);
+}
+
+$font-sizes: (
+  small: 12px,
+  medium: 16px,
+  large: 20px
+);
+
+h2 {
+  font-size: map-get($font-sizes, medium);
+}
+
+
+// Operações
+
+@debug 10px == 10px;
+@debug 10px != 10px;
+
+@debug 5px * 2px;
+@debug 5px * 2;
+
+@debug 1000 > 100;
+@debug 1000 >= 1;
+
+@debug sans- + serif;
+
+@debug not false;
+@debug not true;
+
+@debug true and true;
+@debug true and false;
+
+@debug true or false;
+@debug false or false;
