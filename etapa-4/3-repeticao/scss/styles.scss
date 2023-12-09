@@ -1,0 +1,75 @@
+$colors: purple, pink, plum;
+
+@each $color in $colors {
+  .box-#{$color} {
+    background-color: $color;
+  }
+}
+
+$text-sizes: (
+  title: 24px,
+  paragraph: 16px,
+  note: 14px
+);
+
+@each $selector, $size in $text-sizes {
+  .#{$selector} {
+    font-size: $size;
+  }
+}
+
+$light-theme: (
+  background-color: #FAFAFA,
+  text-color: #0A0A0A
+);
+
+$dark-theme: (
+  background-color: #0A0A0A,
+  text-color: #FAFAFA
+);
+
+@mixin apply-theme($theme) {
+  @each $property, $value in $theme {
+    --#{$property}: #{$value};
+  }
+}
+
+:root[data-theme='light'] {
+  @include apply-theme($light-theme);
+}
+
+:root[data-theme='dark'] {
+  @include apply-theme($dark-theme);
+}
+
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-size: calc(60px / $i);
+  }
+}
+
+@for $i from 1 to 3 {
+  h#{$i} {
+    font-size: calc(60px / $i);
+  }
+}
+
+// Ordem crescente
+@for $i from 1 through 4 {
+  .item-#{$i} {
+    font-size: 100px * $i;
+  }
+}
+
+// Ordem decrescente
+@for $i from 4 through 1 {
+  .item-#{$i} {
+    font-size: 100px * $i;
+  }
+}
+
+@for $i from 4 to 1 {
+  .item-to-#{$i} {
+    font-size: 100px * $i;
+  }
+}
