@@ -57,19 +57,19 @@ $dark-theme: (
 // Ordem crescente
 @for $i from 1 through 4 {
   .item-#{$i} {
-    font-size: 100px * $i;
+    width: 100px * $i;
   }
 }
 
 // Ordem decrescente
 @for $i from 4 through 1 {
   .item-#{$i} {
-    font-size: 100px * $i;
+    width: 100px * $i;
   }
 }
 
 @for $i from 4 to 1 {
   .item-to-#{$i} {
-    font-size: 100px * $i;
+    width: 100px * $i;
   }
 }
