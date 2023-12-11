@@ -1,0 +1,45 @@
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+div {
+  width: 100px;
+}
+
+.box {
+  display: inline-block;
+  width: 120px;
+  margin: 5px 3px;
+  border: 2px solid black;
+  aspect-ratio: 1/1;
+}
+
+.box-1 {
+  background-color: #D81A1A;
+}
+
+.box-2 {
+  background-color: #313AE9;
+}
+
+.box.darken {
+  background-color: #7d0f0f;
+}
+
+.box.lighten {
+  background-color: #e83d3d;
+}
+
+.box.mixed {
+  background-color: #852a82;
+}
+
+div {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=styles.css.map */
