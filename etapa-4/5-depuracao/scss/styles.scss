@@ -1,0 +1,38 @@
+// @warn: emitir mensagens de aviso durante a compilação.
+
+$background-color: #000000;
+
+@if $background-color == #000 or $background-color == #FFF {
+  @warn 'Por questões de acessibilidade, não é indicado o uso de preto puro ou branco puro na cor do plano de fundo.';
+}
+
+@mixin button {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+@mixin btn {
+  @warn 'O mixin btn() está obsoleto. Inclua button() em vez disso.';
+  @include button;
+}
+
+button {
+  @include btn;
+}
+
+// @error: gerar mensagens de erro durante a compilação.
+
+$max-width: 1000px;
+
+@if $max-width < 500px {
+  @error 'A largura máxima deve ser superior a 500px.';
+}
+
+// @debug: imprimir valores de variáveis e expressões durante a compilação.
+
+$base-font-size: 16px;
+$font-size: $base-font-size * 1.5;
+
+@debug 'O tamanho da fonte é #{$font-size}';
+@debug '#{$font-size + 10}';
