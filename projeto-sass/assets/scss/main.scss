@@ -1,0 +1,29 @@
+@use 'abstracts';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-bg-color) transparent;
+}
+
+body {
+  background: var(--primary-bg-color);
+  font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-bg-color);
+  border-radius: 50rem;
+}

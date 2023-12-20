@@ -1,0 +1,64 @@
+@use '../abstracts/mixins';
+
+.header {
+  @include mixins.flexbox($justify: space-between, $align: center);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+
+  &__nav {
+    display: none;
+  }
+  
+  &__toggle {
+    @include mixins.flexbox($justify: flex-end);
+  }
+  
+  &__brand .brand__logo {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+.brand__logo {
+  @include mixins.theme-styles(light) {
+    filter: invert(1);
+  };
+}
+
+#toggleTheme {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: ease-in-out .4s;
+}
+
+
+// Responsividade
+@include mixins.media-break-min(medium){
+  .header {
+    position: fixed;
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1rem 6rem;
+    background: var(--primary-bg-color);
+
+    &__nav {
+      display: flex;
+    }
+  
+    &__nav,
+    &__toggle {
+      min-width: 30%;
+    }
+  }
+  
+  .nav--mobile {
+    display: none;
+  }
+}
+
+@include mixins.media-break-min(xxlarge){
+  .header {
+    padding: 1rem 15rem;
+  }  
+}

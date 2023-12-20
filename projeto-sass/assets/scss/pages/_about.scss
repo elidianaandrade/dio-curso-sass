@@ -1,0 +1,99 @@
+@use '../abstracts/mixins';
+
+.about {
+  @include mixins.flexbox($direction: column, $gap: 1.5rem);
+  padding: 2.5rem 1rem;
+
+  &__content1, &__content2 {
+    @include mixins.flexbox($direction: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
+  }
+  
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    border-radius: 50rem;
+    border: 1px solid var(--primary-border-color);
+  }
+  
+  &__description {
+    @include mixins.flexbox($direction: column, $justify: flex-start, $gap: 1.5rem);
+  }
+  
+  &__icons {
+    @include mixins.flexbox($align: center, $gap: .85rem);
+  }
+  
+  &__icons i {
+    font-size: 1.25rem;
+  }
+
+  &__list {
+    margin-left: 1.25rem
+  }
+
+  &__item {
+    list-style: disc;
+  }
+  
+  &__content2 {
+    .col1, .col2 {
+      @include mixins.flexbox($direction: column, $gap: 2rem);
+      text-align: justify;
+    }
+
+    .col1 {
+      .row1, .row2 {
+        @include mixins.flexbox($direction: column, $gap: .5rem);
+      }
+    }   
+  }
+}
+
+.description__buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+// Responsividade
+@include mixins.media-break-min(medium){
+  .about {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+}
+
+@include mixins.media-break-min(large){
+  .about {
+    gap: 5rem;
+
+    &__content1, &__content2 {
+      display: grid;
+      grid-template-columns: 34% 60%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+  
+    &__description h2 {
+      text-align: left;
+    }
+  }
+
+  .description__buttons {
+    justify-content: flex-start;
+  }
+}
+
+@include mixins.media-break-min(xlarge){
+  .description__buttons .btn {
+    width: auto;
+  }
+}
+
+@include mixins.media-break-min(xxlarge){
+  .about {
+    padding: 10rem 15rem 4rem;
+  }
+}

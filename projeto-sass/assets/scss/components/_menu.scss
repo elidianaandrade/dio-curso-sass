@@ -1,0 +1,55 @@
+@use '../abstracts/mixins';
+
+.menu {
+  @include mixins.flexbox($align: center);
+  background: var(--primary-bg-color);
+  z-index: 2;
+
+  &--principal {
+    gap: 1rem;
+  }
+
+  &__item {
+    width: 100%;
+  }
+  
+  &__link {
+    @include mixins.flexbox($align: center, $gap: .5rem);
+  }
+  
+  &--mobile {
+    @include mixins.flexbox($justify: space-between);
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid var(--primary-border-color);
+  }
+  
+  &--mobile &__link {
+    @include mixins.flexbox($direction: column, $justify: center);
+    padding: 0.5rem 1rem;
+  }
+
+  &__link.active, &__link:hover {
+    .menu__icon, .menu__text {
+      color: var(--primary-color);
+    }
+  }
+  
+  &__icon, &__text {
+    color: var(--text-color);
+  }
+  
+  &__icon {
+    font-size: 1.5rem;
+  }
+  
+  &__text {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  &--social {
+    gap: 1rem;
+  }
+}

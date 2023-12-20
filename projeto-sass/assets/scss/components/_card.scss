@@ -1,0 +1,77 @@
+@use '../abstracts/mixins';
+
+.card {
+  @include mixins.flexbox($direction: column, $gap: 2rem);
+
+  &__cover {
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  &__body {
+    @include mixins.flexbox($direction: column, $justify: flex-end, $align: flex-start, $gap: 1rem);
+  }
+  
+  &__description {
+    color: var(--title-color);
+  }
+  
+  &__list {
+    margin-left: 1.25rem
+  }
+  
+  &__item {
+    list-style: disc;
+  }
+  
+  &__buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  
+  &__buttons .btn {
+    padding: .65rem 1.25rem;
+  }
+  
+  &__buttons .btn span {
+    font-size: 1rem;
+  }
+  
+  &__body .technologies__list {
+    gap: .75rem;
+  }
+  
+  &__body .technologies__item {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  &__body .technologies__logo {
+    height: 2rem;
+  }
+}
+
+// Responsividade
+@include mixins.media-break-min(large){
+  .card {
+    flex-direction: row;
+
+    &.card--reverse {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    
+    &__cover {
+      width: 55%;
+    }
+  }
+}
+
+@include mixins.media-break-min(xlarge){
+  .card__buttons .btn {
+    width: auto;
+  }
+}

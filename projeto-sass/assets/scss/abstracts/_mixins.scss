@@ -1,0 +1,23 @@
+@use 'variables';
+
+@mixin theme-styles($theme) {
+  @at-root html[data-theme=#{$theme}] #{&} {
+    @content;
+  }
+}
+
+@mixin flexbox($direction: row, $justify: null, $align: null, $gap: null){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin media-break-min($breakpoint){
+  $width: map-get(variables.$breakpoints, $breakpoint);
+
+  @media (min-width: $width) {
+    @content;
+  }
+}

@@ -1,0 +1,29 @@
+@use '../abstracts/mixins';
+
+.projects {
+  @include mixins.flexbox($direction: column, $gap: 2rem);
+  padding: 2.5rem 1rem;
+
+  &__container {
+    @include mixins.flexbox($direction: column);
+    gap: 4rem;
+  }
+  
+  .btn {
+    width: auto;
+    margin: auto;
+  }
+}
+
+// Responsividade
+@include mixins.media-break-min(medium){
+  .projects {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+}
+
+@include mixins.media-break-min(xxlarge){
+  .projects {
+    padding: 10rem 15rem 4rem;
+  }
+}

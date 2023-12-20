@@ -1,0 +1,44 @@
+@use '../abstracts/mixins';
+
+main {
+  @include mixins.flexbox($direction: column, $gap: 2rem);
+  padding: 2.5rem 1rem;
+}
+
+.main__content1 {
+  @include mixins.flexbox($direction: column, $gap: 1.5rem);
+}
+
+.main__content2 iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+// Responsividade
+@include mixins.media-break-min(medium){
+  main {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+
+  .main__content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@include mixins.media-break-min(xlarge){
+  main {
+    padding: 12rem 6rem 2rem;
+  }
+
+  .main__content1 .btn {
+    width: auto;
+  }
+}
+
+@include mixins.media-break-min(xxlarge){
+  main {
+    padding: 12rem 15rem 2rem;
+  }
+}

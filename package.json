@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile-sass-project" : "sass --style=compressed projeto-sass/assets/scss/main.scss:projeto-sass/assets/css/main.min.css --no-source-map"
   },
   "keywords": [],
   "author": "",

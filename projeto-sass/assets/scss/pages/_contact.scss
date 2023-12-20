@@ -1,0 +1,30 @@
+@use '../abstracts/mixins';
+
+.contact {
+  @include mixins.flexbox($direction: column, $justify: center, $align: center, $gap: 1.5rem);
+  border-top: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid var(--primary-border-color);
+  padding: 2.5rem 1rem;
+
+  p {
+    text-align: center;
+  }
+  
+  .btn {
+    width: auto;
+  }
+  
+  .email {
+    text-transform: lowercase;
+  }
+}
+
+// Responsividade
+@include mixins.media-break-min(medium){
+  .contact {
+    padding: 6rem;
+  }
+  .contact p {
+    width: 80%;
+  }
+}
